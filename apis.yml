@@ -23,10 +23,14 @@ apis:
       - type: Documentation
         url: https://localgov.jp/
 common:
+  - type: DomainSecurity
+    url: security/localgov-jp-domain-security.yml
   - type: Website
     url: https://localgov.jp/
   - type: PublicAPIsListing
     url: https://github.com/public-apis/public-apis
+  - url: https://localgov.jp/blog
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
