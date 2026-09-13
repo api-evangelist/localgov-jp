@@ -1,0 +1,35 @@
+generated: '2026-09-11'
+method: probed
+source: https://api.localgov.jp/mcp
+status: published
+server:
+  name: localgov-jp
+  transport: http
+  url: https://api.localgov.jp/mcp
+deployment:
+  mode: remote
+  endpoint: https://api.localgov.jp/mcp
+  verified: probed
+  probe: live
+  checked: '2026-09-11'
+  source: docs-check 2026-09-12 (endpoint found in the provider's own documentation, then probed)
+tools_count: 8
+tools:
+- name: search_subsidies
+  description: ''
+- name: get_subsidy_detail
+  description: ''
+- name: get_municipality_grants
+  description: ''
+- name: find_supplementary_grants
+  description: ''
+- name: compare_municipal_subsidies
+  description: ''
+- name: subscribe_changes
+  description: ''
+- name: verify_receipt
+  description: ''
+- name: find_practitioner
+  description: ''
+tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
+authorship: provider
