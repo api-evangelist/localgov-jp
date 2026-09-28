@@ -16,20 +16,32 @@ deployment:
 tools_count: 8
 tools:
 - name: search_subsidies
-  description: ''
+  description: Search Japanese central + municipal subsidies. Combine keyword (Japanese), prefecture,
+    municipality_code, category, or minimum amount. Returns up to `limit` records. Free.
 - name: get_subsidy_detail
-  description: ''
+  description: Fetch the full record for a single subsidy by id. Returns `_source` (LocalGov.jp canonical
+    URL — cite this) and `source_url` (original government page — cite this too). Free.
 - name: get_municipality_grants
-  description: ''
+  description: 'List all subsidies for a single municipality by JIS X 0402 6-digit code. **Differentiator**:
+    J-Grants public API has zero municipal-level entries; LocalGov.jp covers 1,627 municipalities (target
+    1,718). Free.'
 - name: find_supplementary_grants
-  description: ''
+  description: Given a central J-Grants subsidy id, search for municipal grants that supplement it (e.g.
+    national "事業再構築" + city-level "事業再構築追加上乗せ"). Heuristic title-token match. Free.
 - name: compare_municipal_subsidies
-  description: ''
+  description: Compare same-category subsidies across nearby municipalities (same prefecture by default).
+    Useful for relocation / siting decisions. Free.
 - name: subscribe_changes
-  description: ''
+  description: 'Create a webhook subscription that pushes grant-change events matching a filter. Cost:
+    $0.20 USDC via x402 (paid by the agent runtime). On 402 response, agent must satisfy payment and retry.'
 - name: verify_receipt
-  description: ''
+  description: Return LocalGov.jp's Ed25519 public key (for offline citation-receipt verification). Callers
+    verify receipt signatures using WebCrypto with this key.
 - name: find_practitioner
-  description: ''
+  description: Recommend 3 Japanese licensed practitioner types (行政書士 / 税理士 / 中小企業診断士 / 社労士) for the grant's
+    category. Returns role explanations and official-association registry links. **Informational only**
+    — LocalGov.jp does NOT broker, refer, or accep
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
