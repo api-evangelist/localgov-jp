@@ -39,7 +39,6 @@ apis:
   - name: LocalGov.jp
     description: "Japan grants and subsidies (central J-Grants + 1,916 municipalities)"
     humanURL: https://localgov.jp/
-    baseURL: https://localgov.jp/
     tags:
       - Government
     properties:
